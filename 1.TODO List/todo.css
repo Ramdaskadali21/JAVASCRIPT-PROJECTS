@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: url(todoo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1
+{
+    font-size: 3rem;
+    font-weight: 50;
+    margin: 1rem 0 3rem;
+    text-align: center;
+    color: #fff;
+    font-family: 'Hind', sans-serif;
+
+}
+.styling
+{
+    font-weight: 800;
+    color: rgb(13,247,5);
+}
+.input_div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.input_div .input
+{
+    padding: 0.5rem 1rem;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    width: 450px;
+    font-size: 1.15rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+}
+.addButton
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    color: rgb(10,243,134);
+    font-size: large;
+    margin: 0.25rem;
+    background-color: rgb(255,0,76);
+    cursor: pointer;
+}
+.addButton:hover
+{
+    opacity: 0.7;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+.item
+{
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #fff;
+    
+}
+.item_input
+{
+    background: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    width: 350px;
+    font-size: 1.4rem;
+}
+.editButton
+{
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+    font-family: 'Hind', sans-serif;
+    background: none;
+    outline: none;
+    color: rgb(0,238,255);
+    border: none;
+    cursor: pointer;
+
+}
+.removeButton
+{
+    font-size: 1.4rem;
+    font-family: 'Hind', sans-serif;
+    background: none;
+    outline: none;
+    color: rgb(243,6,37);
+    border: none;
+    cursor: pointer;
+
+}

@@ -1,0 +1,31 @@
+body
+{
+    background: linear-gradient(to right, #0918f7,#e40852);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container
+{
+    text-align: center;
+    margin-top: 50px;
+}
+h1
+{
+    color: #eff304;
+}
+#quote
+{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+#generateBtn
+{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}

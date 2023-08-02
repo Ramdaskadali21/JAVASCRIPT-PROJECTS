@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+
+html,body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(A.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.calculator
+{
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: 0 4px 8px rgba(0,0,0,0.2);
+    width: 320px;
+}
+#title
+{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: 'Stylish', sans-serif;
+}
+.buttons
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:10px;
+
+}
+button
+{
+    padding:20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease;
+}
+#display
+{
+    width: 94%;
+    padding: 10px;
+    font-size: 32px;
+    text-align: right;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    color:#333;
+}
+.remove-button{
+    background-image: url(deletes.png);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+}
+
+/* span two Columns*/
+.equal-button{
+    grid-column: span 2;
+    background-color: #f44336;
+    color: #fff;
+}
+/* color for specific buttons */
+button[value="%"]{
+    background-color: #f44336;
+    color: #fff;
+}
+button[value="R"]{
+    background-color: #009688;
+    color: #fff;
+}
+button[value="C"]{
+    background-color: #9c27b0;
+    color: #fff;
+}
+button[value="/"]{
+    background-color: #ff9800;
+    color: #fff;
+}
+button[value="x"]{
+    background-color: #673ab7;
+    color: #fff;
+}
+button[value="-"]{
+    background-color: #03a9f4;
+    color: #fff;
+}
+button[value="+"]{
+    background-color: #4caf50;
+    color: #fff;
+}
+button:hover{
+    background-color: #e53935;
+    color:#fff;
+}
+button:active{
+    background-color: #08ee00;
+    color:#fff;
+}

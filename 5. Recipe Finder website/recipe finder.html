@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Finder</title>
+        <style>/*Css code is here*/
+        body{
+            margin:0;
+            padding:0;
+            background: url(reci.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size:cover;
+        }
+        .container{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        h1{
+            color: #04f8ec;
+            font-size: 60px;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+        }
+        #searchInput{
+            padding:10px;
+            width:500px;
+        }
+        #searchBtn{
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #searchBtn:hover{
+            background-color: #f5057d;
+        }
+        #results{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .recipe{
+            border: 1px solid #ccc;
+            padding:10px;
+            margin:10px;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 500px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out,box-shadow 0.3s ease-in-out;
+        }
+        .recipe:hover{
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Recipe Finder</h1>
+            <input id="searchInput" type="text" placeholder="Enter Ingredients">
+            <button id="searchBtn" >Search</button>
+            <div  id="results" ></div>
+        </div>
+        <script>//javascript code is here
+        //get the search button element
+        var searchBtn = document.getElementById('searchBtn');
+
+        //attach a click event listener to the search button
+        searchBtn.addEventListener('click',searchRecipes);
+
+        //function to search for recipes
+        function searchRecipes(){
+            //get the search input value
+            var searchInput = document.getElementById('searchInput').value;
+
+            //clear the results div
+            var resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            //define recipe data
+            var recipes = [
+                {title:'Pasta carbonara', ingredients:['pasta','eggs','bacon','cheese','pepper']},
+                { title: 'Chicken Stir-Fry', ingredients: ['chicken', 'vegetables', 'soy sauce', 'garlic'] },
+                { title: 'Caprese Salad', ingredients: ['tomato', 'mozzarella', 'basil', 'olive oil'] },
+                 { title: 'Chocolate Cake', ingredients: ['flour', 'sugar', 'cocoa powder', 'eggs', 'butter'] },
+                 { title: 'Classic Burger', ingredients: ['ground beef', 'lettuce', 'tomato', 'onion', 'cheese', 'buns'] },
+                //add more recipes here
+
+            ];
+            //filter matching recipes
+            var matchingRecipes = recipes.filter(function(recipe){
+                return recipe.ingredients.some(function(ingredient){
+                    return ingredient.toLowerCase().includes(searchInput.toLowerCase());
+
+                });
+
+            });
+
+            //check for matching recipes and display
+            if(matchingRecipes.length > 0){
+                matchingRecipes.forEach(function(recipe){
+                    var recipeDiv = document.createElement('div');
+                    recipeDiv.className = 'recipe';
+
+                    //display recipe title
+                    var title = document.createElement('h3');
+                    title.textContent = recipe.title;
+
+                    //display recipe ingredients
+                    var ingredients = document.createElement('p');
+                    ingredients.textContent = 'Ingredients:' + recipe.ingredients.join(',');
+
+                    recipeDiv.appendChild(title);
+                    recipeDiv.appendChild(ingredients);
+                    resultsDiv.appendChild(recipeDiv);
+                });
+
+            }else
+            {
+                //display no recipe found message
+                var message = document.createElement('p');
+                message.textContent = 'No Recipe Found';
+                resultsDiv.appendChild(message);
+
+            }
+
+        }
+
+        </script>
+    </body>
+</html>
